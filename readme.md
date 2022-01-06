@@ -94,6 +94,22 @@ DB_DATABASE= article_service_db
   <img width="500" src="./src/assets/Screen Shot 2022-01-07 at 01.04.44.png">
 
 </div>
+
+## command line
+ for start server
+ ```
+ yarn start
+ ```
+
+ for start unit and integration test
+  ```
+  yarn test
+  ```
+  for start test and check coverage
+  ```
+  yarn cover
+  ```
+
 ## End Point
 **GET**
 
