@@ -40,6 +40,24 @@ module.exports = {
         try {
             const setData = request.body;
             const result = await articleModel.postArticle(setData);
+            
+            //to flush data in redis if there are new data
+            redis.keys('*', function (err, keys) {
+                if (err) return console.log(err);
+                for(let i = 0; i < keys.length ; i++) {
+                    console.log(keys[i].slice(0,5))
+                    if(keys[i].slice(0,5)==="query"){
+                    redis.del(keys[i],(err, success) => {
+                        if(success){
+                            console.log('success')
+                        }
+                        else{
+                            console.log('error')
+                        }
+                    })
+                }
+            }
+              }); 
             return helper.response(response, 200, result,"POST Data Successfully");
         } catch (error) {
             return helper.response(response, 500, error);
