@@ -1,4 +1,4 @@
-const connection = require('../config/conn');
+const connection = require('../config/DBconn');
 module.exports = {
     getArticles: function (query) {
         return new Promise(function(resolve,reject){

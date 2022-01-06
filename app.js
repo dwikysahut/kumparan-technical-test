@@ -3,9 +3,19 @@ const app = express();
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const cors = require('cors');
-require('dotenv').config({path:__dirname+'/.env'})
+require('dotenv').config({path:__dirname+'/.env'});
+require('dotenv').config();
+const redisConn = require("./src/config/redisConn")
 // const morgan = 
 const routeNavigator = require('./src/index');
+
+redisConn.redisCheck()
+    .then((res) => {
+        console.log(res)
+    })
+    .catch((err) => {
+        console.log(err)
+    })
 const server = app.listen(5000, "127.0.0.1", function () {
     const host = server.address().address;
     const port = server.address().port;

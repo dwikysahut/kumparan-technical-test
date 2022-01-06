@@ -19,18 +19,19 @@
     "express": "^4.17.2",
     "morgan": "^1.10.0",
     "mysql": "^2.18.1",
-    "nodemon": "^2.0.15"
+    "nodemon": "^2.0.15",
+    "redis": "3.0.2"
   },
   "nyc": {
-        "all": true,
-        "include": [
-            "src/**/*.js"
-        ],
-        "reporter": [
-            "text",
-            "text-summary"
-        ]
-    },
+    "all": true,
+    "include": [
+      "src/**/*.js"
+    ],
+    "reporter": [
+      "text",
+      "text-summary"
+    ]
+  },
   "devDependencies": {
     "chai": "^4.3.4",
     "chai-http": "^4.3.0",
